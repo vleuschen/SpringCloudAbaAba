@@ -7,7 +7,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource #当前数据源操作类型
     driver-class-name: com.mysql.cj.jdbc.Driver #MySQL驱动包
-    url: jdbc:mysql://localhost:3306/db2019?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    url: jdbc:mysql://localhost:3306/db2019?characterEncoding=UTF8&autoReconnect=true&useSSL=false&serverTimezone=UTC
     username: root
     password: 123456
 
