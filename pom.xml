@@ -12,6 +12,7 @@
   <modules>
   <!-- 子模块 -->
     <module>cloud-provider-payment8001</module>
+    <module>cloud-consumer-order80</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -101,6 +102,7 @@
   </dependencyManagement>
 
   <build>
+  <!-- devtools    -->
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
