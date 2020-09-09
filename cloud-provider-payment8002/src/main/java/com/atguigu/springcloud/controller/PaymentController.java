@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @Slf4j
@@ -46,6 +47,22 @@ public class PaymentController {
             return new CommonResult(444,"查询失败",null);
         }
 
+    }
+
+    @GetMapping("/patment/lb")
+    public String getPatmentLB(){
+        return serverPort;
+    }
+
+    @GetMapping("/feign/timeout")
+    public String paymentFeiginTimeout(){
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return serverPort;
     }
 
 }

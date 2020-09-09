@@ -29,4 +29,12 @@ public class OrderController {
     public CommonResult<Payment> getPayment(@PathVariable("id")Long id){
         return restTemplate.getForObject(PAYMENT_URL + "/payment/getPaymentId/"+id,CommonResult.class);
     }
+
+
+    @GetMapping("/consumer/payment/ /{id}")
+    public CommonResult<Payment> getPayment2(@PathVariable("id")Long id){
+//        return restTemplate.getForObject(PAYMENT_URL + "/payment/getPaymentId/"+id,CommonResult.class);
+        return restTemplate.getForEntity(PAYMENT_URL + "/payment/getPaymentId/"+id,CommonResult.class).getBody();
+    }
+
 }
